@@ -7,6 +7,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
+import { AdministradorComponent } from './components/administrador/administrador.component';
+import { ModificarProductosComponent } from './components/modificar-productos/modificar-productos.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { ProductosComponent } from './components/productos/productos.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ProductosComponent
+    ProductosComponent,
+    DetalleProductoComponent,
+    AdministradorComponent,
+    ModificarProductosComponent
   ],
   imports: [
     BrowserModule,
