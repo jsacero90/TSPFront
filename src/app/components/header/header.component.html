@@ -11,8 +11,9 @@
           <!-- Top Right -->
           <div class="right-content">
             <ul class="list-main">
-              <li><i class="ti-user"></i> <a href="#">Mi cuenta</a></li>
-              <li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+              <li *ngIf="auth.loggedIn" ><i class="ti-user"></i> <a href="#">Mi cuenta</a></li>
+              <li *ngIf="!auth.loggedIn" ><i class="ti-power-off"></i><a (click)="auth.login()">Inicio Sesión</a></li>
+              <li *ngIf="auth.loggedIn" ><i class="ti-power-off"></i><a (click)="auth.logout()">Cerrar Sesión</a></li>
             </ul>
           </div>
           <!-- End Top Right -->
@@ -27,7 +28,7 @@
         <div class="col-lg-2 col-md-2 col-12">
           <!-- Logo -->
           <div class="logo">
-            <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            <a href="index.html"><img src="./assets/img/logo.jpeg" alt="logo" width="65%"></a>
           </div>
           <!--/ End Logo -->
           <!-- Search Form -->
@@ -45,16 +46,27 @@
           <!--/ End Search Form -->
           <div class="mobile-nav"></div>
         </div>
+
+
         <div class="col-lg-8 col-md-7 col-12">
           <div class="search-bar-top">
             <div class="search-bar">
-              <select>
+              <select style="display: none;">
                 <option selected="selected">Todos</option>
                 <option>celulares</option>
                 <option>tabletas</option>
                 <option>computadores</option>
                 <option>accesorios</option>
               </select>
+              <div class="nice-select" tabindex="0">
+                <span class="current">Todos</span>
+                <ul class="list">
+                  <li data-value="todos" class="option selected">Todos</li>
+                  <li data-value="celulares" class="option">Celulares</li>
+                  <li data-value="computadores" class="option">Computadores</li>
+                  <li data-value="accesorios" class="option">Accesorios</li>
+                </ul>
+              </div>
               <form>
                 <input name="search" placeholder="Busque sus productos aquí....." type="search">
                 <button class="btnn"><i class="ti-search"></i></button>
@@ -66,18 +78,16 @@
           <div class="right-bar">
             <!-- Search Form -->
             <div class="sinlge-bar">
-              <a href="#" class="single-icon"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-            </div>
-            <div class="sinlge-bar">
-              <a href="#" class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+              <a class="single-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
             </div>
             <div class="sinlge-bar shopping">
-              <a href="#" class="single-icon"><i class="ti-bag"></i> <span class="total-count">2</span></a>
+              <a *ngIf="!auth.loggedIn" class="single-icon"><i class="ti-bag"></i> <span class="total-count">0</span></a>
+              <a *ngIf="auth.loggedIn" [routerLink]="['car']" class="single-icon"><i class="ti-bag"></i> <span class="total-count">0</span></a>
               <!-- Shopping Item -->
-              <div class="shopping-item">
+              <div *ngIf="auth.loggedIn"  class="shopping-item">
                 <div class="dropdown-cart-header">
                   <span>2 Items</span>
-                  <a href="cart.html">Ver Carrito</a>
+                  <a [routerLink]="['car']">Ver Carrito</a>
                 </div>
                 <ul class="shopping-list">
                   <li>
@@ -114,7 +124,7 @@
       <div class="cat-nav-head">
         <div class="row">
           <div class="col-lg-3">
-            <div class="all-category">
+            <div class="all-category" *ngIf="router.url === '/home'">
               <h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIAS</h3>
               <ul class="main-category">
                 <li><a href="#">New Arrivals <i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -123,7 +133,7 @@
                     <li><a href="#">best selling</a></li>
                     <li><a href="#">top 100 offer</a></li>
                     <li><a href="#">sunglass</a></li>
-                    <li><a href="#">watch</a></li>
+                    <li><a href="#">celulares</a></li>
                     <li><a href="#">man’s product</a></li>
                     <li><a href="#">ladies</a></li>
                     <li><a href="#">westrn dress</a></li>
@@ -150,7 +160,7 @@
                         <img src="https://via.placeholder.com/225x155" alt="#">
                       </div>
                       <div class="inner-link">
-                        <a href="#">Watch</a>
+                        <a href="#">celulares</a>
                         <a href="#">T-shirt</a>
                         <a href="#">Hoodies</a>
                         <a href="#">Formal Pant</a>
@@ -165,7 +175,7 @@
                         <a href="#">Ladies Shirt</a>
                         <a href="#">Ladies Frog</a>
                         <a href="#">Ladies Sun Glass</a>
-                        <a href="#">Ladies Watch</a>
+                        <a href="#">Ladies celulares</a>
                       </div>
                     </li>
                   </ul>
@@ -173,7 +183,7 @@
                 <li><a href="#">accessories</a></li>
                 <li><a href="#">top 100 offer</a></li>
                 <li><a href="#">sunglass</a></li>
-                <li><a href="#">watch</a></li>
+                <li><a href="#">celulares</a></li>
                 <li><a href="#">man’s product</a></li>
                 <li><a href="#">ladies</a></li>
                 <li><a href="#">westrn dress</a></li>
@@ -188,9 +198,10 @@
                 <div class="navbar-collapse">
                   <div class="nav-inner">
                     <ul class="nav main-menu menu navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="productos.html">Productos</a></li>
-                        <li><a href="contact.html">Contactenos</a></li>
+                        <li routerLinkActive="active"><a [routerLink]="['home']">Home</a></li>
+                        <li routerLinkActive="active"><a [routerLink]="['productos']">Productos</a></li>
+                        <li routerLinkActive="active"><a [routerLink]="['contacto']">Contactenos</a></li>
+                        <li *ngIf="auth.loggedIn"  routerLinkActive="active"><a [routerLink]="['administrar']">Administrar</a></li>
                       </ul>
                   </div>
                 </div>
