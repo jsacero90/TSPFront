@@ -10,6 +10,8 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 import { AdministradorComponent } from './components/administrador/administrador.component';
 import { ModificarProductosComponent } from './components/modificar-productos/modificar-productos.component';
+import { CarComponent } from './components/car/car.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ModificarProductosComponent } from './components/modificar-productos/mo
     ProductosComponent,
     DetalleProductoComponent,
     AdministradorComponent,
-    ModificarProductosComponent
+    ModificarProductosComponent,
+    CarComponent,
+
   ],
   imports: [
     BrowserModule,
