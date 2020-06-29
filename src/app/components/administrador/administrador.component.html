@@ -1,76 +1,180 @@
-<!-- Slider Area -->
-<section class="hero-slider">
-  <!-- Single Slider -->
-  <div class="single-slider">
-    <div class="container">
-      <div class="row no-gutters">
-        <div class="col-lg-9 offset-lg-3 col-12">
-          <div class="text-inner">
-            <div class="row">
-              <div class="col-lg-7 col-12">
-                <div class="hero-text">
-                  <h1><span>TODO LO QUE NECESITA </span>EN UN SOLO LUGAR</h1>
-                  <p>Lo último en tecnología disponible en el mercado <br> en un solo lugar y facil de comprar <br> con precios que no se pueden igualar <br> </p>
-                  <div class="button">
-                    <a href="productos.html" class="btn">Comprar ahora!</a>
+<!-- Breadcrumbs -->
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="bread-inner">
+          <ul class="bread-list">
+            <li><a href="index.html">Home<i class="ti-arrow-right"></i></a></li>
+            <li class="active"><a href="contact.html">contactenos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Breadcrumbs -->
+
+<!-- Start Contact -->
+<section id="contact-us" class="contact-us section">
+  <div class="container">
+      <div class="contact-head">
+        <div class="row">
+          <div class="col-lg-8 col-12">
+            <div class="form-main">
+              <div class="title">
+                <h3>Agregar productos</h3>
+              </div>
+              <form class="form" method="post" action="mail/mail.php">
+                <div class="row">
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label>Nombre<span>*</span></label>
+                      <input name="name" type="text" placeholder="">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label>valor<span>*</span></label>
+                      <input name="descripcion" type="text" placeholder="">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label>cantidad<span>*</span></label>
+                      <input name="cantidad" type="number" placeholder="">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label>Categoría<span>*</span></label>
+                    </div>
+                  <select>
+                  <option selected="selected">celulares</option>
+                <option>tabletas</option>
+                <option>computadores</option>
+                <option>accesorios</option>
+              </select>
+
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label>Url Imagen<span>*</span></label>
+                      <input name="imagen" type="text" placeholder="">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group message">
+                      <label>Descripcion<span>*</span></label>
+                      <textarea name="descripcion" placeholder=""></textarea>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group button">
+                      <button type="agregar" class="btn ">Agregar producto</button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </form>
+            </div>
+          </div>
+
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!--/ End Single Slider -->
-</section>
-<!--/ End Slider Area -->
-<br>
 
-<!-- Start Small Banner  -->
-<section class="small-banner section">
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Single Banner  -->
-      <div class="col-lg-4 col-md-6 col-12">
-        <div class="single-banner">
-          <img src="https://via.placeholder.com/600x370" alt="#">
-          <div class="content">
-            <p>Celulares</p>
-            <h3>Lo útimo en <br> tecnología 5G</h3>
-            <a href="productos.html">Comprar ahora</a>
-          </div>
-        </div>
-      </div>
-      <!-- /End Single Banner  -->
-      <!-- Single Banner  -->
-      <div class="col-lg-4 col-md-6 col-12">
-        <div class="single-banner">
-          <img src="https://via.placeholder.com/600x370" alt="#">
-          <div class="content">
-            <p>Computadores</p>
-            <h3>Las mejores <br> marcas</h3>
-            <a href="productos.html">Comprar ahora</a>
-          </div>
-        </div>
-      </div>
-      <!-- /End Single Banner  -->
-      <!-- Single Banner  -->
-      <div class="col-lg-4 col-12">
-        <div class="single-banner tab-height">
-          <img src="https://via.placeholder.com/600x370" alt="#">
-          <div class="content">
-            <p>Accesorios</p>
-            <h3>Complementos<br> para todo</h3>
-            <a href="productos.html">Comprar ahora</a>
-          </div>
-        </div>
-      </div>
-      <!-- /End Single Banner  -->
-    </div>
-  </div>
 </section>
-<!-- End Small Banner -->
+<!--/ End Contact -->
 
-<br>
-<br>
+  <!-- Start Contact -->
+<section id="contact-us" class="contact-us section">
+  <div class="container">
+      <div class="contact-head">
+        <div class="row">
+          <div class="col-lg-8 col-12">
+            <div class="form-main">
+              <div class="title">
+                <h3>Agregar Stock a productos</h3>
+              </div>
+              <form class="form" method="post" action="mail/mail.php">
+                <div class="row">
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label>Nombre<span>*</span></label>
+                      <input name="name" type="text" placeholder="">
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label>cantidad<span>*</span></label>
+                      <input name="cantidad" type="number" placeholder="">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label>Categoría<span>*</span></label>
+                    </div>
+              <select>
+                <option selected="selected">celulares</option>
+                <option>tabletas</option>
+                <option>computadores</option>
+                <option>accesorios</option>
+              </select>
+
+                  </div>
+
+
+                  <div class="col-12">
+                    <div class="form-group button">
+                      <button type="agregar" class="btn ">Agregar Stock</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+            </div>
+          </div>
+        </div>
+
+</section>
+<!--/ End Contact -->
+
+
+<!-- Start Contact -->
+<section id="contact-us" class="contact-us section">
+  <div class="container">
+      <div class="contact-head">
+        <div class="row">
+          <div class="col-lg-8 col-12">
+            <div class="form-main">
+              <div class="title">
+                <h3>Agregar Categotías</h3>
+              </div>
+              <form class="form" method="post" action="mail/mail.php">
+                <div class="row">
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label>Nombre<span>*</span></label>
+                      <input name="name" type="text" placeholder="">
+                    </div>
+                      <div class="col-12">
+                    <div class="form-group button">
+                      <button type="agregarC" class="btn ">Agregar categoria</button>
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+            </div>
+          </div>
+        </div>
+
+</section>
+<!--/ End Contact -->

@@ -11,6 +11,8 @@ import { DetalleProductoComponent } from './components/detalle-producto/detalle-
 import { AdministradorComponent } from './components/administrador/administrador.component';
 import { ModificarProductosComponent } from './components/modificar-productos/modificar-productos.component';
 import { CarComponent } from './components/car/car.component';
+import { ContactenosComponent } from './components/contactenos/contactenos.component';
+import { PagarComponent } from './components/pagar/pagar.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { CarComponent } from './components/car/car.component';
     AdministradorComponent,
     ModificarProductosComponent,
     CarComponent,
+    ContactenosComponent,
+    PagarComponent,
 
   ],
   imports: [
