@@ -14,6 +14,10 @@ import { CarComponent } from './components/car/car.component';
 import { ContactenosComponent } from './components/contactenos/contactenos.component';
 import { PagarComponent } from './components/pagar/pagar.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -28,13 +32,15 @@ import { PagarComponent } from './components/pagar/pagar.component';
     CarComponent,
     ContactenosComponent,
     PagarComponent,
-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [BrowserAnimationsModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

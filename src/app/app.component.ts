@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { LoadingService } from './services/loading.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,11 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private auth: AuthService){}
+  constructor(private auth: AuthService, private spinner: LoadingService){}
 
   ngOnInit() {
-    this.auth.userProfile$.subscribe(console.log);
+    this.auth.userProfile$.subscribe(data => console.log(data));
+    this.spinner.loading();
   }
 
 }
