@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-productos',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private snipper: LoadingService) { }
 
   ngOnInit(): void {
+    this.snipper.loading();
   }
 
 }
