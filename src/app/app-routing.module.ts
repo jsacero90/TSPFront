@@ -7,14 +7,16 @@ import { AdministradorComponent } from './components/administrador/administrador
 import { AuthGuard } from './services/auth.guard';
 import { ContactenosComponent } from './components/contactenos/contactenos.component';
 import { PagarComponent } from './components/pagar/pagar.component';
+import { DetalleProductoComponent } from './components/detalle-producto/detalle-producto.component';
 
 
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'productos', component: ProductosComponent},
-  {path: 'car', component: CarComponent, canActivate: [AuthGuard]},
+  {path: 'car/:Id', component: CarComponent, canActivate: [AuthGuard]},
   {path: 'contacto', component: ContactenosComponent},
+  {path: 'producto/:Id', component: DetalleProductoComponent},
   {path: 'administrar', component: AdministradorComponent, canActivate: [AuthGuard]},
   {path: 'pagar', component: PagarComponent, canActivate: [AuthGuard]},
   { path: '**', pathMatch: 'full', redirectTo: 'home' },

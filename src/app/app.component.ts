@@ -12,7 +12,6 @@ export class AppComponent implements OnInit {
   constructor(private auth: AuthService, private spinner: LoadingService){}
 
   ngOnInit() {
-    this.auth.userProfile$.subscribe(data => console.log(data));
     this.spinner.loading();
   }
 

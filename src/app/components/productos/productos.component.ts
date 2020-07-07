@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingService } from 'src/app/services/loading.service';
+import { LlamadoapiService } from 'src/app/services/llamadoapi.service';
 
 @Component({
   selector: 'app-productos',
@@ -8,10 +9,26 @@ import { LoadingService } from 'src/app/services/loading.service';
 })
 export class ProductosComponent implements OnInit {
 
-  constructor(private snipper: LoadingService) { }
+  dataCategorias;
+  dataProductos;
+  constructor(private snipper: LoadingService,
+              private serviceApi: LlamadoapiService) { }
 
   ngOnInit(): void {
     this.snipper.loading();
+    this.getCategorias();
+    this.getproductos();
+  }
+
+  getproductos() {
+    this.serviceApi.getProductos().subscribe(data => {
+      this.dataProductos = data;
+      console.log(data);
+    });
+  }
+
+  getCategorias(){
+    this.serviceApi.getCategorias().subscribe(data => this.dataCategorias = data);
   }
 
 }

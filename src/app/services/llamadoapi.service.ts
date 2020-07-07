@@ -29,4 +29,12 @@ export class LlamadoapiService {
     return this.getQuery('categorias');
   }
 
+  getProductos() {
+    return this.getQuery('productos');
+  }
+
+  getProducto(id: string) {
+    return this.getQuery(`producto/${id}`);
+  }
+
 }

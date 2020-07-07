@@ -17,6 +17,8 @@ import { PagarComponent } from './components/pagar/pagar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AsyncPipe } from '@angular/common';
+import { ImgPipe } from './pipes/img.pipe';
 
 
 @NgModule({
@@ -32,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CarComponent,
     ContactenosComponent,
     PagarComponent,
+    ImgPipe,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgxSpinnerModule,
     BrowserAnimationsModule
   ],
-  providers: [BrowserAnimationsModule],
+  providers: [BrowserAnimationsModule, AsyncPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

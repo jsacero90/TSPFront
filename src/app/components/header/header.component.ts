@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { LlamadoapiService } from '../../services/llamadoapi.service';
+import { AsyncPipe } from '@angular/common';
+
 
 
 
@@ -12,7 +14,8 @@ import { LlamadoapiService } from '../../services/llamadoapi.service';
 })
 export class HeaderComponent implements OnInit {
 
-  imgAvatar;
+
+  idAdmin = 'google-oauth2|106440039442815689734';
   dataCategorias;
   constructor(public router: Router,
               public auth: AuthService,
@@ -34,3 +37,5 @@ export class HeaderComponent implements OnInit {
   }
 
 }
+
+

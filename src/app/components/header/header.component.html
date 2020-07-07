@@ -71,12 +71,12 @@
           <div class="right-bar">
             <div class="sinlge-bar shopping">
               <a *ngIf="!auth.loggedIn" class="single-icon"><i class="ti-bag"></i> <span class="total-count">0</span></a>
-              <a *ngIf="auth.loggedIn" [routerLink]="['car']" class="single-icon"><i class="ti-bag"></i> <span class="total-count">0</span></a>
+              <a *ngIf="auth.loggedIn" [routerLink]="['car',1]" class="single-icon"><i class="ti-bag"></i> <span class="total-count">0</span></a>
               <!-- Shopping Item -->
               <div *ngIf="auth.loggedIn"  class="shopping-item">
                 <div class="dropdown-cart-header">
                   <span>2 Items</span>
-                  <a [routerLink]="['car']">Ver Carrito</a>
+                  <a [routerLink]="['car',1]">Ver Carrito</a>
                 </div>
                 <ul class="shopping-list">
                   <li>
@@ -138,11 +138,14 @@
               <nav class="navbar navbar-expand-lg">
                 <div class="navbar-collapse">
                   <div class="nav-inner">
-                    <ul class="nav main-menu menu navbar-nav">
+                    <ul class="nav main-menu menu navbar-nav" >
                         <li routerLinkActive="active"><a [routerLink]="['home']">Home</a></li>
                         <li routerLinkActive="active"><a [routerLink]="['productos']">Productos</a></li>
                         <li routerLinkActive="active"><a [routerLink]="['contacto']">Contactenos</a></li>
-                        <li *ngIf="auth.loggedIn"  routerLinkActive="active"><a [routerLink]="['administrar']">Administrar</a></li>
+                        <div *ngIf="auth.userProfile$ | async as profile"  routerLinkActive="active">
+                          <li ><p *ngIf=" auth.loggedIn && profile.sub === idAdmin "  routerLinkActive="active">
+                          <a [routerLink]="['administrar']">Administrar</a></p></li>
+                      </div>
                       </ul>
                   </div>
                 </div>
